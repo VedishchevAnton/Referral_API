@@ -4,6 +4,7 @@ from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from time import sleep
 
 from users.models import User, AuthCode
 from users.serializers import LoginSerializer, VerificationAuthCodeSerializer, TokenResponseSerializer, \
@@ -41,6 +42,7 @@ class LoginView(CreateAPIView):
             user = User.objects.get(pk=serializer.data['id'])  # получаем пользователя по id
             confirmation_token = AuthCode.objects.filter(
                 user=user).first()  # получаем токен для обратного вызова
+            sleep(2)  # имитация задержки на сервере
             sms_with_auth_code(user, confirmation_token, **kwargs)  # отправляем SMS с токеном
 
         data = {
