@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "7ded7df9-fa21-4db7-92fb-ae95a9284619",
+		"name": "Referral System API",
+		"description": "Коллекция запросов для Реферальной системы",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28495113"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/login/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone_number\": \"+79151629824\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/verification/1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone_number\": \"+79151629824\",\n    \"code\": \"8381\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/verification/1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/profile/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e2d15324300c2b05e7e41b748a17920b0146dca5",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/profile/",
+				"description": "\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/profile/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e2d15324300c2b05e7e41b748a17920b0146dca5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Anton\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/profile/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/profile/",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e2d15324300c2b05e7e41b748a17920b0146dca5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"unentered_referral_code\": \"84HJ5O\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/profile/"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/profile/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e2d15324300c2b05e7e41b748a17920b0146dca5",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/profile/"
+			},
+			"response": []
+		}
+	]
+}
